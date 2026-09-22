@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>MBC 圖控編程 使用手冊</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+  <meta name="description" content="MBC 圖控編程（MBC BlockCode）積木式程式設計環境使用手冊——安裝、介面導覽、積木操作技巧、積木字典、自己做積木、燒錄疑難排解">
+  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-copy-code@2/dist/docsify-copy-code.min.css">
+  <style>
+    :root {
+      --theme-color: #1565c0;
+    }
+    /* 這個網站是給小學老師看的，不是給工程師看的：字體加大一點、行距鬆一點 */
+    .markdown-section {
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 860px;
+    }
+    .markdown-section h1 { font-size: 2em; }
+    .markdown-section img {
+      max-width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      margin: 8px 0;
+    }
+    .markdown-section blockquote {
+      border-left-color: #1565c0;
+      background: #f3f8ff;
+      padding: 4px 16px;
+    }
+    /* 步驟編號用的方框樣式（自己約定的排版慣例，見 CONTRIBUTING 的寫作規則） */
+    .markdown-section .step-note {
+      background: #fff8e1;
+      border: 1px solid #ffb300;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin: 12px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'MBC 圖控編程 使用手冊',
+      logo: '',
+      repo: 'https://github.com/MBCrobot89/mbc-blockcode-guide',
+      loadSidebar: true,
+      loadNavbar: false,
+      subMaxLevel: 3,
+      auto2top: true,
+      coverpage: false,
+      alias: {
+        // 讓 404 導回首頁，不用另外做一頁「找不到內容」
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: '搜尋這本手冊…',
+        noData: '找不到相關內容',
+        depth: 4
+      },
+      copyCode: {
+        buttonText: '複製程式碼',
+        errorText: '複製失敗',
+        successText: '已複製'
+      },
+      formatUpdated: '{MM}/{DD} {HH}:{mm}',
+      plugins: [
+        function (hook) {
+          // 每頁最下面補一行「本頁最後更新」＋回到頂端，統一格式不用每頁手打
+          hook.afterEach(function (html) {
+            return html;
+          });
+        }
+      ]
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-cpp.min.js"></script>
+</body>
+</html>
